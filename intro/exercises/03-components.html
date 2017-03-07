@@ -33,4 +33,28 @@
 // - Once you've finished the task, go ahead and explore what React.createElement
 //   (or the JSX equivalent) returns. This is an object called a React Element
 //   (aka: UI Descriptor object). Unlike DOM elements, creating these is super cheap.
+
+const areYouSpanish = false;
+const check = areYouSpanish ? DimeHola() : SayHello();
+// const check = areYouSpanish ? <DimeHola /> : <SayHello />; // can do this way too
+
+function SayHello() {
+    return (
+        <div>Hello World</div>
+    )
+}
+
+function DimeHola() {
+    return (
+        <div>Hola Mundo</div>
+    )
+}
+
+ReactDOM.render(
+    // <SayHello / >, // also works SayHello()
+    check, 
+    document.getElementById('root')
+)
+
+// would do this way if you wanted to pass arguments or data through the function, as opposed to straight JSX
 </script>

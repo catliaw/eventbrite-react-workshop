@@ -1,13 +1,53 @@
 <title>Hello World React</title>
 <meta charset="utf-8" />
 <script src="../babel.min.js"></script>
+<!-- Entire version of babel (for this project), usually would npm/yarn it -->
+<!-- min - compresses it -->
+<!-- Converts JSX to raw Javascript -->
+
 <script src="../react.min.js"></script>
+<!-- React, includes JSX -->
+
 <script src="../react-dom.min.js"></script>
+<!-- React DOM -->
+
 <div id="root"></div>
+
 <script type="text/babel" data-presets="react">
+// note: type="text/babel" so can convert JSX to JS
+
 // Now we're going to use JSX. Here's an example of JSX and how it translates to raw JavaScript:
 //
 // <p id="hi">Hello World</p> --> React.createElement('p', {id: 'hi'}, 'Hello World')
 //
 // Now your job is to render <div>Hello World</div> into #root using JSX
+
+// <div>Hello World</div> --> React.createElement('div', {id: 'root'}, 'Hello, World')
+
+// ReactDOM.render(
+//     <div>Hello World</div>,
+//     document.getElementById('root')
+// );
+
+// adds <div data-reactroot>Hello World</div>
+// data-reactroot - react adds attributes for rendering for virtual DOM
+
+// ReactDOM.render(
+//     <div class="red">Hello World</div>,
+//     document.getElementById('root')
+// );
+// won't show up because can't use class in JSX
+
+// ReactDOM.render(
+//     <div className="red">Hello World</div>,
+//     document.getElementById('root')
+// );
+// have to use className to create a class in JSX
+
+const element = <div className="red">Hello World</div>
+
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
 </script>
